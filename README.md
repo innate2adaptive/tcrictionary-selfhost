@@ -49,6 +49,29 @@ No separate import step is required.
 
 Depending on your hardware and dataset size, the initial import may take several minutes. Subsequent startups will use the existing database and start much more quickly.
 
+## Updating the Dataset
+
+The Neo4j database is stored in a Docker volume after the initial import. As a result, simply replacing the files in `data/` will **not** cause the database to be rebuilt.
+
+Before updating the dataset, you must stop the deployment and remove the existing database volume:
+
+```bash
+docker compose -f tcrictionary.yml down -v
+```
+
+The `-v` flag is important because it removes the persistent Neo4j volume. Without it, Docker will reuse the existing database and ignore any changes made to the dataset files.
+
+Once the volume has been removed:
+
+1. Replace the existing dataset files in the `data/` directory with the updated versions.
+2. Restart TcRictionary:
+
+```bash
+docker compose -f tcrictionary.yml up
+```
+
+On startup, the database will detect that no existing Neo4j volume is present and will perform a fresh import of the dataset, recreate all indexes, and launch the database.
+
 ## Using Local TcRictionary
 
 Once the database has started, you can access it in two ways.
