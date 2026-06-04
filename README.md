@@ -28,8 +28,9 @@ repository's `data/` directory.
 
 Before starting, ensure that you have:
 
-- Docker installed
-- Docker Compose installed
+- Installed Docker and Docker Compose. See the
+  [Docker documentation](https://docs.docker.com/compose/install/) for
+  instructions.
 - The TcRictionary dataset available in the `data/` directory
 
 ## Launching TcRictionary
@@ -105,9 +106,8 @@ docker ps
 ```
 
 Queries are written in Cypher. For an introduction to the language, see the
-official Neo4j Cypher documentation:
-
-https://neo4j.com/docs/cypher-manual/current/introduction/
+official
+[Neo4j Cypher documentation](https://neo4j.com/docs/cypher-manual/current/introduction/).
 
 ### 2. Neo4j Browser
 
@@ -122,18 +122,17 @@ You will be presented with a `:server connect` dialog.
 Simply select **Connect** without modifying any fields.
 
 You can then explore and query the database through Neo4j Browser's graphical
-interface. Documentation for Neo4j Browser is available at:
-
-https://neo4j.com/docs/browser-manual/current/
+interface. See
+[documentation for the Neo4j Browser](https://neo4j.com/docs/browser-manual/current/).
 
 ### 3. Neo4j Python Driver
 
 TcRictionary can also be accessed programmatically using the Neo4j Python
 Driver.
 
-The official Neo4j Python Driver documentation is available at:
-
-https://neo4j.com/docs/api/python-driver/current/
+See the official
+[Neo4j Python Driver documentation](https://neo4j.com/docs/api/python-driver/current/)
+for detailed information.
 
 This interface is recommended for integrating TcRictionary queries into analysis
 pipelines, scripts, and larger Python applications.
