@@ -52,6 +52,14 @@ On first startup, the deployment will automatically:
 
 No separate import step is required.
 
+> **Note**
+>
+> This deployment also includes
+> [Neo4j's APOC (Awesome Procedures on Cypher)](https://neo4j.com/docs/apoc/current/)
+> library, which is installed and available by default. APOC procedures and
+> functions can be used directly from Cypher queries without any additional
+> configuration.
+
 Depending on your hardware and dataset size, the initial import may take several
 minutes. Subsequent startups will use the existing database and start much more
 quickly.
